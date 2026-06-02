@@ -1,0 +1,204 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  --font-sans: 'Inter', 'Hind Siliguri', system-ui, sans-serif;
+  --font-display: 'Playfair Display', 'Hind Siliguri', serif;
+  --font-bengali: 'Hind Siliguri', sans-serif;
+
+  /* Charulata · Professional Luxury Palette
+     Inspired by Aesop, Loro Piana, Aritzia — warm neutrals + champagne */
+  --charu-bg:        #14110f;   /* deep espresso */
+  --charu-bg-2:      #1c1916;
+  --charu-bg-3:      #24201c;
+  --charu-ivory:     #f5f0e8;   /* primary text */
+  --charu-muted:     #a39a8c;   /* secondary text */
+  --charu-line:      #2c2823;   /* borders */
+  --charu-gold:      #c9a96a;   /* champagne accent */
+  --charu-gold-soft: #d8bd87;
+  --charu-rose:      #c98a85;   /* muted blush (sparingly) */
+  --charu-success:   #7a9e7e;
+
+  --background: #14110f;
+  --foreground: #f5f0e8;
+  --card: #1c1916;
+  --card-foreground: #f5f0e8;
+  --popover: #1c1916;
+  --popover-foreground: #f5f0e8;
+  --primary: #c9a96a;
+  --primary-foreground: #14110f;
+  --secondary: #24201c;
+  --secondary-foreground: #f5f0e8;
+  --muted: #1c1916;
+  --muted-foreground: #a39a8c;
+  --accent: #24201c;
+  --accent-foreground: #f5f0e8;
+  --destructive: #c95a5a;
+  --destructive-foreground: #ffffff;
+  --border: #2c2823;
+  --input: #1c1916;
+  --input-background: #1c1916;
+  --switch-background: #2c2823;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #c9a96a;
+  --chart-1: #c9a96a;
+  --chart-2: #c98a85;
+  --chart-3: #d8bd87;
+  --chart-4: #7a9e7e;
+  --chart-5: #a39a8c;
+  --radius: 0.75rem;
+  --sidebar: #1c1916;
+  --sidebar-foreground: #f5f0e8;
+  --sidebar-primary: #c9a96a;
+  --sidebar-primary-foreground: #14110f;
+  --sidebar-accent: #24201c;
+  --sidebar-accent-foreground: #f5f0e8;
+  --sidebar-border: #2c2823;
+  --sidebar-ring: #c9a96a;
+}
+
+.dark {
+  --background: #14110f;
+  --foreground: #f5f0e8;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-charu-bg: var(--charu-bg);
+  --color-charu-ivory: var(--charu-ivory);
+  --color-charu-gold: var(--charu-gold);
+  --color-charu-rose: var(--charu-rose);
+  --color-charu-muted: var(--charu-muted);
+  --color-charu-line: var(--charu-line);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 6px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html, body, #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    background-color: #14110f;
+  }
+
+  html {
+    font-size: var(--font-size);
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.015em;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(245, 240, 232, 0.02);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    border: 1px solid rgba(245, 240, 232, 0.06);
+  }
+  .glass-strong {
+    background: rgba(245, 240, 232, 0.04);
+    backdrop-filter: blur(24px) saturate(160%);
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    border: 1px solid rgba(245, 240, 232, 0.08);
+  }
+  .surface {
+    background: #1c1916;
+    border: 1px solid #2c2823;
+  }
+  .surface-2 {
+    background: #24201c;
+    border: 1px solid #2c2823;
+  }
+  .gradient-text {
+    background: linear-gradient(135deg, #d8bd87 0%, #c9a96a 60%, #b08d4f 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .btn-gold {
+    background: #c9a96a;
+    color: #14110f;
+    transition: background 0.2s ease;
+  }
+  .btn-gold:hover { background: #d8bd87; }
+  .btn-ghost {
+    background: transparent;
+    color: #f5f0e8;
+    border: 1px solid #2c2823;
+    transition: all 0.2s ease;
+  }
+  .btn-ghost:hover { background: #1c1916; border-color: #3a342d; }
+  .hairline {
+    background: linear-gradient(90deg, transparent, #2c2823 20%, #2c2823 80%, transparent);
+  }
+  .glow-soft {
+    box-shadow: 0 1px 0 rgba(245,240,232,0.04) inset, 0 8px 30px rgba(0,0,0,0.35);
+  }
+  .scrollbar-none::-webkit-scrollbar { display: none; }
+  .scrollbar-none { scrollbar-width: none; }
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-14px); }
+  }
+  .animate-float-slow { animation: float-slow 9s ease-in-out infinite; }
+  @keyframes shimmer {
+    0% { background-position: -1000px 0; }
+    100% { background-position: 1000px 0; }
+  }
+  .shimmer {
+    background: linear-gradient(90deg, transparent, rgba(245,240,232,0.05), transparent);
+    background-size: 1000px 100%;
+    animation: shimmer 2.4s linear infinite;
+  }
+  .text-balance { text-wrap: balance; }
+}
